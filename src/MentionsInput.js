@@ -1021,7 +1021,7 @@ class MentionsInput extends React.Component {
     let insert = makeMentionsMarkup(markup, id, display)
 
     if(appendAtTheRate) {
-      insert += '@'
+      insert += ' @'
     }
 
     if (appendSpaceOnAdd) {
@@ -1034,7 +1034,7 @@ class MentionsInput extends React.Component {
 
     let displayValue = displayTransform(id, display)
     if(appendAtTheRate) {
-      displayValue += '@'
+      displayValue += ' @'
     }
 
     if (appendSpaceOnAdd) {
