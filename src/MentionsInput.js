@@ -1012,12 +1012,17 @@ class MentionsInput extends React.Component {
       displayTransform,
       appendSpaceOnAdd,
       onAdd,
+      appendAtTheRate
     } = mentionsChild.props
 
     const start = mapPlainTextIndex(value, config, querySequenceStart, 'START')
     const end = start + querySequenceEnd - querySequenceStart
 
     let insert = makeMentionsMarkup(markup, id, display)
+
+    if(appendAtTheRate) {
+      insert += '@'
+    }
 
     if (appendSpaceOnAdd) {
       insert += ' '
@@ -1028,6 +1033,10 @@ class MentionsInput extends React.Component {
     this.inputElement.focus()
 
     let displayValue = displayTransform(id, display)
+    if(appendAtTheRate) {
+      displayValue += '@'
+    }
+
     if (appendSpaceOnAdd) {
       displayValue += ' '
     }
